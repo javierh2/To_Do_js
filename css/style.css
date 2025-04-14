@@ -55,3 +55,22 @@ textarea {
     font-size: 1.1rem;
     border: 1px solid;
 }
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.postItem{
+    background-color: #8000207a;
+    border: 2px solid #9094a9;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.editForm{
+    display: none;
+    margin-top: 10px;
+
+}
