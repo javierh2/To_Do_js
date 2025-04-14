@@ -32,6 +32,38 @@ function renderTaskList(){
         </div>
         `
         postList.appendChild(listTask) // adding to all of them
-
     })
+}
+
+function postData(){
+    const postTitleInput = document.getElementById('postTitle').value  // selected info from html
+    const postBodyInput = document.getElementById('postBody').value    // selected info from html
+    const postTitle = postTitleInput.value
+    const postBody = postBodyInput.value
+
+    if (postTitle == '' || postBody == '') {  // condition to body of the html
+        alert('Please complete the fields')
+        return
+    }
+
+    fetch(urlBase, {
+        method: 'POST',    // method POST to publish TASKS
+        body: JSON.stringify({
+            title: postTitle,     // adding of my info
+            body: postBody,       // adding of my info
+            userId: 1,
+        }),
+        headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then(res => res.json())
+    .then(data => {
+        tasks.push(data)
+        renderTaskList()
+        // reset of the fields
+        postTitleInput.value = ''
+        postBodyInput.value = ''
+    })
+    .catch(error => console.error('Error to create a Reminder: ',error))
 }
