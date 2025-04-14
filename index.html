@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Reminders</title>
+</head>
+<body>
+    
+    <h1>Reminders of the week </h1>
+    <h2>Ver Taares</h2>
+    <button onclick="getData()">Ver tareas</button>
+
+    <h2>New Task</h2>
+    <form id="postTask" onsubmit="postData()">
+        <label for="postTitle">Title: </label>
+        <input type="text" id="postTitle" required>
+
+        <label for="postBody"></label>
+        <textarea type="text" id="postBody" required> </textarea>
+
+        <button type="submit">Add Task</button>
+
+        
+
+
+
+    </form>
+
+
+
+
+
+
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
